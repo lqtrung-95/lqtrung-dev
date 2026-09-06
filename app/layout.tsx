@@ -27,9 +27,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <ThemeScript />
         <ThemeProvider>
-          <div className="flex flex-col">
+          <div className="flex min-h-dvh flex-col">
             <Header />
-            <main className="pb-20">{children}</main>
+            <main className="flex-1 pb-20">{children}</main>
             <Footer />
           </div>
         </ThemeProvider>
