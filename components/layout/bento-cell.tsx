@@ -23,7 +23,7 @@ export function BentoCell({
   return (
     <div
       className={cn(
-        'scroll-reveal rounded-(--radius-card) border border-(--border) bg-(--bg-elevated) p-6',
+        'surface-card scroll-reveal p-4 sm:p-6',
         spanClasses[span],
         className
       )}

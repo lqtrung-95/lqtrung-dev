@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import 'katex/dist/katex.min.css'
 import './globals.css'
-import { geist, inter, jetbrainsMono } from '@/app/fonts'
+import { geist, jetbrainsMono } from '@/app/fonts'
 import { ThemeProvider } from '@/components/theme/theme-provider'
 import { Header } from '@/components/layout/header'
 import { Footer } from '@/components/layout/footer'
@@ -20,7 +20,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="en"
-      className={`${geist.variable} ${inter.variable} ${jetbrainsMono.variable}`}
+      className={`${geist.variable} ${jetbrainsMono.variable}`}
       suppressHydrationWarning
     >
       <body>

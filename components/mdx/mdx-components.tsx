@@ -12,7 +12,7 @@ function MdxLink({ href = '', ...rest }: AnchorHTMLAttributes<HTMLAnchorElement>
 }
 
 function MdxImage({ alt, ...rest }: ImageProps) {
-  return <Image alt={alt} {...rest} className="rounded-(--radius-card)" />
+  return <Image alt={alt} {...rest} className="rounded-lg" />
 }
 
 // Maps MDX element/component names to their React implementation.

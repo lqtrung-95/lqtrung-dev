@@ -4,13 +4,15 @@ import type { ButtonHTMLAttributes } from 'react'
 import { cn } from '@/lib/utils'
 
 const buttonVariants = cva(
-  'inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium transition-colors disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--focus-ring) focus-visible:ring-offset-2 focus-visible:ring-offset-(--bg)',
+  'label-mono inline-flex cursor-pointer items-center justify-center gap-2 rounded-md uppercase transition-[color,background-color,border-color,box-shadow,transform] duration-200 ease-out disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--focus-ring) focus-visible:ring-offset-2 focus-visible:ring-offset-(--bg) motion-reduce:transition-none',
   {
     variants: {
       variant: {
-        default: 'bg-(--accent) text-(--accent-fg) hover:bg-(--accent-hover)',
-        outline: 'border border-(--border) bg-transparent text-(--fg) hover:bg-(--bg-subtle)',
-        ghost: 'bg-transparent text-(--fg) hover:bg-(--bg-subtle)',
+        default:
+          'bg-(--accent) text-(--accent-fg) hover:-translate-y-px hover:bg-(--accent-hover) hover:shadow-[0_0_16px_-2px_var(--glow-shadow)]',
+        outline:
+          'border border-(--border) bg-transparent text-(--fg) hover:border-(--accent) hover:text-(--accent)',
+        ghost: 'bg-transparent text-(--fg) hover:bg-(--bg-elevated-hover)',
       },
       size: {
         default: 'h-10 px-4 py-2',
