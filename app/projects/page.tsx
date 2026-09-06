@@ -28,7 +28,7 @@ export default function ProjectsPage() {
         <div className="mt-4">
           <BentoGrid>
             {enterprise.map((project) => (
-              <ProjectCard key={project.title} project={project} />
+              <ProjectCard key={project.title} project={project} detailed />
             ))}
           </BentoGrid>
         </div>
@@ -41,7 +41,7 @@ export default function ProjectsPage() {
         <div className="mt-4">
           <BentoGrid>
             {personal.map((project) => (
-              <ProjectCard key={project.title} project={project} />
+              <ProjectCard key={project.title} project={project} detailed />
             ))}
           </BentoGrid>
         </div>

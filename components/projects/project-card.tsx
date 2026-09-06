@@ -4,7 +4,13 @@ import type { Project } from '@/data/projects'
 import { BentoCell } from '@/components/layout/bento-cell'
 import { StatusBadge } from '@/components/projects/status-badge'
 
-export function ProjectCard({ project }: { project: Project }) {
+export function ProjectCard({
+  project,
+  detailed = false,
+}: {
+  project: Project
+  detailed?: boolean
+}) {
   const [status, ...techTags] = project.tags
   const scope = project.category === 'enterprise' ? 'ENTERPRISE' : 'INDEPENDENT'
 
@@ -14,6 +20,12 @@ export function ProjectCard({ project }: { project: Project }) {
         <span>{scope}</span>
         <span aria-hidden>{'//'}</span>
         <StatusBadge status={status} />
+        {detailed && project.role && (
+          <>
+            <span aria-hidden>{'//'}</span>
+            <span>{project.role}</span>
+          </>
+        )}
       </div>
 
       {project.imgSrc && (
@@ -31,7 +43,23 @@ export function ProjectCard({ project }: { project: Project }) {
           />
         )}
       </h3>
-      <p className="mt-2 text-sm text-(--fg-muted)">{project.description}</p>
+      <p className="mt-2 text-sm text-(--fg-muted)">
+        {detailed ? project.longDescription : project.description}
+      </p>
+
+      {detailed && project.highlights.length > 0 && (
+        <ul className="mt-4 space-y-1.5 text-sm text-(--fg-muted)">
+          {project.highlights.map((highlight) => (
+            <li key={highlight} className="flex gap-2">
+              <span aria-hidden className="text-(--accent)">
+                {'>'}
+              </span>
+              {highlight}
+            </li>
+          ))}
+        </ul>
+      )}
+
       <div className="mt-4 flex flex-wrap gap-2">
         {techTags.map((tag) => (
           <span

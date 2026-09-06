@@ -11,4 +11,4 @@ I'm a frontend engineer at Binance, building interfaces for financial products u
 
 I'm also a graduate student at Georgia Tech, studying Interactive Intelligence alongside the day job — mostly because I like staying a beginner at something on purpose.
 
-Outside of work I spend time on algorithms and independent projects. I write here about what that surfaces: frontend engineering and system design mostly, occasionally the less technical parts of a long career — pace, focus, staying curious.
+Outside of work I spend time on algorithms, independent projects, and open-source — I like sharing what I learn as much as building it. I write here about what that surfaces: frontend engineering and system design mostly, occasionally the less technical parts of a long career — pace, focus, staying curious.
