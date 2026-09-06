@@ -91,6 +91,14 @@
   --color-code-bg: var(--code-bg);
 }
 
+html {
+  /* Reserve the scrollbar's width on every page, even ones short enough to
+   * not need it — otherwise a centered container (mx-auto) sits ~7-8px
+   * further right on short pages (no scrollbar) than on tall/scrollable
+   * ones, since they have different effective viewport widths. */
+  scrollbar-gutter: stable;
+}
+
 body {
   background-color: var(--bg);
   color: var(--fg);

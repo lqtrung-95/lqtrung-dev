@@ -42,6 +42,7 @@ export default function AboutPage() {
       <div className="max-w-3xl">
         <p className="label-mono mt-8 text-(--accent) uppercase">~/about</p>
         <div className="mt-3 flex items-center gap-4">
+          <h1 className="text-3xl font-bold text-(--fg)">About</h1>
           {author.avatar && (
             <Image
               src={author.avatar}
@@ -51,7 +52,6 @@ export default function AboutPage() {
               className="size-16 shrink-0 rounded-full object-cover"
             />
           )}
-          <h1 className="text-3xl font-bold text-(--fg)">About</h1>
         </div>
 
         <div className="surface-card mt-8 grid grid-cols-2 gap-x-6 gap-y-8 p-6 sm:grid-cols-4">
