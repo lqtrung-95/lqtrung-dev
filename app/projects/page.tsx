@@ -10,21 +10,42 @@ export const metadata: Metadata = {
 }
 
 export default function ProjectsPage() {
+  const enterprise = projects.filter((p) => p.category === 'enterprise')
+  const personal = projects.filter((p) => p.category === 'personal')
+
   return (
     <Container>
-      <h1 className="mt-8 font-(family-name:--font-sans-display) text-3xl font-bold text-(--fg)">
-        Projects
-      </h1>
+      <p className="label-mono mt-8 text-(--accent) uppercase">~/projects</p>
+      <h1 className="mt-3 text-3xl font-bold text-(--fg)">Projects</h1>
       <p className="mt-3 max-w-2xl text-(--fg-muted)">
         Enterprise platforms at Binance and Zalo, alongside independent products and tools.
       </p>
-      <div className="mt-10">
-        <BentoGrid>
-          {projects.map((project) => (
-            <ProjectCard key={project.title} project={project} />
-          ))}
-        </BentoGrid>
-      </div>
+
+      <section className="mt-12">
+        <h2 className="label-mono text-(--fg-subtle) uppercase">
+          Enterprise scale <span aria-hidden>{'// '}{enterprise.length}</span>
+        </h2>
+        <div className="mt-4">
+          <BentoGrid>
+            {enterprise.map((project) => (
+              <ProjectCard key={project.title} project={project} />
+            ))}
+          </BentoGrid>
+        </div>
+      </section>
+
+      <section className="mt-12 mb-16">
+        <h2 className="label-mono text-(--fg-subtle) uppercase">
+          Independent products <span aria-hidden>{'// '}{personal.length}</span>
+        </h2>
+        <div className="mt-4">
+          <BentoGrid>
+            {personal.map((project) => (
+              <ProjectCard key={project.title} project={project} />
+            ))}
+          </BentoGrid>
+        </div>
+      </section>
     </Container>
   )
 }

@@ -4,6 +4,8 @@
 // + personalProjects) in the previous site — not invented.
 export type BentoSpan = 'featured' | 'medium' | 'small'
 
+export type ProjectCategory = 'enterprise' | 'personal'
+
 export type Project = {
   title: string
   description: string
@@ -13,6 +15,7 @@ export type Project = {
   imgSrc?: string
   span: BentoSpan
   featured: boolean
+  category: ProjectCategory
 }
 
 export const projects: Project[] = [
@@ -24,6 +27,7 @@ export const projects: Project[] = [
     href: 'https://pay.binance.com/en',
     span: 'featured',
     featured: true,
+    category: 'enterprise',
   },
   {
     title: 'Zalo Notification Service (ZNS)',
@@ -33,6 +37,7 @@ export const projects: Project[] = [
     href: 'https://zalo.cloud/zns/guidelines/intro',
     span: 'medium',
     featured: false,
+    category: 'enterprise',
   },
   {
     title: 'Binance KYC/KYB',
@@ -42,6 +47,7 @@ export const projects: Project[] = [
     href: 'https://www.binance.com/en/support/faq/detail/360015552032',
     span: 'medium',
     featured: false,
+    category: 'enterprise',
   },
   {
     title: 'Effortful',
@@ -51,6 +57,7 @@ export const projects: Project[] = [
     href: 'https://effortful.app',
     span: 'medium',
     featured: false,
+    category: 'personal',
   },
   {
     title: 'FrontEnd Coach',
@@ -60,6 +67,7 @@ export const projects: Project[] = [
     href: 'https://frontendcoach.app/',
     span: 'medium',
     featured: false,
+    category: 'personal',
   },
   {
     title: 'Magic Console Logger',
@@ -69,6 +77,7 @@ export const projects: Project[] = [
     href: 'https://marketplace.visualstudio.com/items?itemName=trunglq.magic-console-logger',
     span: 'small',
     featured: false,
+    category: 'personal',
   },
   {
     title: 'Any-2-QR',
@@ -78,6 +87,7 @@ export const projects: Project[] = [
     href: 'https://any-2-qr.vercel.app/',
     span: 'small',
     featured: false,
+    category: 'personal',
   },
   {
     title: 'Emoji Charades',
@@ -87,6 +97,7 @@ export const projects: Project[] = [
     href: 'https://emoji-charades.vercel.app/',
     span: 'small',
     featured: false,
+    category: 'personal',
   },
   {
     title: 'Tarot Insight',
@@ -95,6 +106,7 @@ export const projects: Project[] = [
     tags: ['In Progress', 'OpenAI API', 'AI Integration', 'Natural Language Processing'],
     span: 'small',
     featured: false,
+    category: 'personal',
   },
   {
     title: 'Shot Mate',
@@ -103,5 +115,6 @@ export const projects: Project[] = [
     tags: ['In Progress', 'Mobile Development', 'Computer Vision', 'React Native'],
     span: 'small',
     featured: false,
+    category: 'personal',
   },
 ]
