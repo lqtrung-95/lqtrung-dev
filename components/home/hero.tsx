@@ -4,13 +4,15 @@ import { Button } from '@/components/ui/button'
 
 export function Hero() {
   return (
-    <section className="flex flex-col-reverse items-start gap-10 py-16 sm:py-24 md:flex-row md:items-center md:justify-between">
-      <div className="max-w-2xl">
-        <p className="text-sm font-medium text-(--accent)">Hi, I&apos;m Trung</p>
-        <h1 className="mt-3 font-(family-name:--font-sans-display) text-4xl font-bold tracking-tight text-(--fg) sm:text-5xl">
+    <section className="flex flex-col-reverse items-start gap-12 py-20 sm:py-28 md:flex-row md:items-center md:justify-between md:gap-16">
+      <div className="scroll-reveal max-w-2xl">
+        <p className="text-sm font-semibold tracking-wide text-(--accent) uppercase">
+          Hi, I&apos;m Trung
+        </p>
+        <h1 className="mt-4 font-(family-name:--font-sans-display) text-4xl font-bold tracking-tight text-(--fg) sm:text-5xl md:text-6xl">
           Frontend Engineer building fast, accessible web applications.
         </h1>
-        <p className="mt-6 max-w-2xl text-lg text-(--fg-muted)">
+        <p className="mt-6 max-w-xl text-lg text-(--fg-muted)">
           Frontend Engineer at Binance and graduate student at Georgia Tech, with 7+ years of
           experience delivering scalable products used by millions of users.
         </p>
@@ -23,14 +25,20 @@ export function Hero() {
           </Button>
         </div>
       </div>
-      <Image
-        src="/static/images/avatar-linkedin.jpeg"
-        alt="Trung Le"
-        width={160}
-        height={160}
-        priority
-        className="h-32 w-32 shrink-0 rounded-full object-cover ring-1 ring-(--border) sm:h-40 sm:w-40"
-      />
+      <div className="scroll-reveal relative shrink-0">
+        {/* Soft accent-tinted glow — the single teal reused as depth, not a
+         * second color, so the avatar reads as considered rather than
+         * bolted on. */}
+        <div aria-hidden className="absolute -inset-6 -z-10 rounded-full bg-(--accent)/20 blur-2xl" />
+        <Image
+          src="/static/images/avatar-linkedin.jpeg"
+          alt="Trung Le"
+          width={176}
+          height={176}
+          priority
+          className="size-36 rounded-full object-cover ring-1 ring-(--border) sm:size-44"
+        />
+      </div>
     </section>
   )
 }
