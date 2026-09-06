@@ -6,8 +6,10 @@ export function Hero() {
   return (
     <section className="flex flex-col-reverse items-start gap-10 py-16 sm:py-24 md:flex-row md:items-center md:justify-between">
       <div className="max-w-2xl">
-        <p className="text-sm font-medium text-(--accent)">Hi, I&apos;m Trung</p>
-        <h1 className="mt-3 font-(family-name:--font-sans-display) text-4xl font-bold tracking-tight text-(--fg) sm:text-5xl">
+        <p className="label-mono text-(--accent) uppercase">
+          <span aria-hidden>~/trung-le $</span> whoami
+        </p>
+        <h1 className="mt-4 text-4xl font-semibold tracking-tight text-(--fg) sm:text-5xl">
           Frontend Engineer building fast, accessible web applications.
         </h1>
         <p className="mt-6 max-w-2xl text-lg text-(--fg-muted)">

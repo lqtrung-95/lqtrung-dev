@@ -28,9 +28,8 @@ export default async function TagPage({ params }: { params: Promise<{ tag: strin
 
   return (
     <Container>
-      <h1 className="mt-8 font-(family-name:--font-sans-display) text-3xl font-bold text-(--fg)">
-        #{match.tag}
-      </h1>
+      <p className="label-mono mt-8 text-(--accent) uppercase">~/tags/{tagSlug}</p>
+      <h1 className="mt-3 text-3xl font-bold text-(--fg)">#{match.tag}</h1>
       <PostList posts={posts} />
     </Container>
   )

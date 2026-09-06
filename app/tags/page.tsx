@@ -12,15 +12,14 @@ export default function TagsPage() {
   const tags = getAllTags()
   return (
     <Container>
-      <h1 className="mt-8 font-(family-name:--font-sans-display) text-3xl font-bold text-(--fg)">
-        Tags
-      </h1>
+      <p className="label-mono mt-8 text-(--accent) uppercase">~/tags</p>
+      <h1 className="mt-3 text-3xl font-bold text-(--fg)">Tags</h1>
       <div className="mt-8 flex flex-wrap gap-3">
         {tags.map(({ tag, slug, count }) => (
           <Link
             key={slug}
             href={`/tags/${slug}`}
-            className="rounded-full border border-(--border) px-3 py-1 text-sm text-(--fg-muted) transition-colors hover:border-(--accent) hover:text-(--accent)"
+            className="label-mono rounded border border-(--border) px-3 py-1 text-(--fg-muted) uppercase transition-colors duration-150 ease-out hover:border-(--accent) hover:text-(--accent)"
           >
             {tag} <span className="text-(--fg-subtle)">({count})</span>
           </Link>

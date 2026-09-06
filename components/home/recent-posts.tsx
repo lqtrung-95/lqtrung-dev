@@ -7,10 +7,11 @@ export function RecentPosts() {
   return (
     <section className="py-8">
       <div className="flex items-baseline justify-between">
-        <h2 className="font-(family-name:--font-sans-display) text-2xl font-semibold text-(--fg)">
-          Recent posts
-        </h2>
-        <Link href="/blog" className="text-sm font-medium text-(--accent) hover:text-(--accent-hover)">
+        <h2 className="text-2xl font-semibold text-(--fg)">Recent posts</h2>
+        <Link
+          href="/blog"
+          className="label-mono text-(--accent) uppercase transition-colors duration-150 ease-out hover:text-(--accent-hover)"
+        >
           View all &rarr;
         </Link>
       </div>
