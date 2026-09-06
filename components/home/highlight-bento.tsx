@@ -35,7 +35,7 @@ const stats: Stat[] = [
   {
     icon: Target,
     label: 'Focus',
-    value: 'Performance & a11y',
+    value: 'Scale & AI',
     span: 'small',
   },
 ]
