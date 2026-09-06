@@ -16,8 +16,7 @@ export default function ProjectsPage() {
         Projects
       </h1>
       <p className="mt-3 max-w-2xl text-(--fg-muted)">
-        {/* TODO: replace with real project details — entries below are placeholders */}
-        Selected work — details below are placeholders pending real project write-ups.
+        Enterprise platforms at Binance and Zalo, alongside independent products and tools.
       </p>
       <div className="mt-10">
         <BentoGrid>
