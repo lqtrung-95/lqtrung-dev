@@ -5,7 +5,7 @@ import { TagPill } from '@/components/blog/tag-pill'
 
 export function PostCard({ post }: { post: Post }) {
   return (
-    <article className="border-b border-(--border) py-8 first:pt-0 last:border-b-0">
+    <article className="-mx-4 rounded-lg border-b border-(--border) px-4 py-8 transition-colors duration-200 ease-out first:pt-0 last:border-b-0 hover:bg-(--bg-subtle) sm:-mx-6 sm:px-6">
       <PostMeta date={post.date} readingTime={post.readingTime} />
       <h2 className="mt-2 font-(family-name:--font-sans-display) text-xl font-semibold">
         <Link href={`/blog/${post.slug}`} className="text-(--fg) hover:text-(--accent)">
