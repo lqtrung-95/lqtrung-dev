@@ -39,7 +39,7 @@ export default function AboutPage() {
 
   return (
     <Container>
-      <div className="max-w-3xl">
+      <div className="mx-auto max-w-3xl">
         <p className="label-mono mt-8 text-(--accent) uppercase">~/about</p>
         <div className="mt-3 flex items-center gap-4">
           <h1 className="text-3xl font-bold text-(--fg)">About</h1>
