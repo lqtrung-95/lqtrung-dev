@@ -7,31 +7,8 @@ email: lqtrung.dev@gmail.com
 linkedin: https://www.linkedin.com/in/trungle-3195/
 ---
 
-I am **Trung Le**, a **Frontend Engineer at Binance** and **Graduate Student at Georgia Tech** with **7+ years of experience** delivering scalable products used by **millions of users**.
+I'm a frontend engineer at Binance, building interfaces for financial products used by millions of people — payments, compliance tooling, and the platforms behind them. Most days that means React, TypeScript, and Next.js, with a focus on performance, accessibility, and systems that hold up under real scale.
 
-## 🚀 Professional Experience
+I'm also a graduate student at Georgia Tech, studying Interactive Intelligence alongside the day job — mostly because I like staying a beginner at something on purpose.
 
-- **Frontend Engineer** at **Binance** - Building mission-critical financial applications
-- **7+ years** delivering scalable products with focus on **performance** and **reliability**
-- Strong track record in **leading UI efforts** across **FinTech** and **B2B platforms**
-- Consistently driven **user growth** and **engagement** through impactful features
-
-## 🎓 Education & Growth
-
-- **Graduate Student** at **Georgia Tech** - Specializing in **Interactive Intelligence**
-- Passionate about **modern front-end technologies** and **high-performance applications**
-- Commitment to **industry practice** and **academic excellence**
-
-## 💻 Technical Expertise
-
-- **Core Technologies**: React, TypeScript, Next.js, Modern JavaScript
-- **Specializations**: Performance optimization, Accessibility, Scalable architecture
-- **Focus Areas**: Enterprise-scale applications, Algorithm design, System architecture
-
-## 🌟 Beyond Code
-
-- **Algorithm enthusiast** - Constantly exploring problem-solving techniques
-- **Knowledge sharing** - Contributing to developer community through open-source
-- **Continuous learning** - Staying at the forefront of emerging technologies
-
-Through this blog, I share insights from building **enterprise-scale applications**, **algorithmic problem-solving**, and the latest in **front-end engineering**. Join me as I explore the intersection of **cutting-edge technology** and **practical application**.
+Outside of work I spend time on algorithms and independent projects. I write here about what that surfaces: frontend engineering and system design mostly, occasionally the less technical parts of a long career — pace, focus, staying curious.
