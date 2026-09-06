@@ -6,7 +6,7 @@ import type { BentoSpan } from '@/data/projects'
 // name strings (e.g. `md:col-span-${n}`), so every span variant must be a
 // literal, statically-analyzable class here.
 const spanClasses: Record<BentoSpan, string> = {
-  featured: 'md:col-span-2 md:row-span-2',
+  featured: 'md:col-span-2',
   medium: 'md:col-span-2',
   small: 'md:col-span-1',
 }

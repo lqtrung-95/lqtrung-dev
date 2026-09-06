@@ -6,7 +6,7 @@ export function PostList({ posts }: { posts: Post[] }) {
     return <p className="py-8 text-(--fg-muted)">No posts yet.</p>
   }
   return (
-    <div>
+    <div className="mt-6">
       {posts.map((post) => (
         <PostCard key={post.slug} post={post} />
       ))}

@@ -5,7 +5,7 @@ export function BentoGrid({ children, className }: { children: ReactNode; classN
   return (
     <div
       className={cn(
-        'grid grid-cols-1 gap-4 [grid-auto-flow:dense] md:grid-cols-4 md:auto-rows-[minmax(11rem,auto)]',
+        'grid grid-cols-1 gap-4 [grid-auto-flow:dense] md:grid-cols-4 md:auto-rows-[minmax(7rem,auto)]',
         className
       )}
     >
