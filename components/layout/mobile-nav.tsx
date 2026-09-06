@@ -18,11 +18,14 @@ export function MobileNav({ links }: { links: NavLink[] }) {
         </Button>
       </DialogTrigger>
       <DialogContent>
-        <DialogTitle className="mb-6 text-sm font-medium text-(--fg-muted)">Menu</DialogTitle>
+        <DialogTitle className="label-mono mb-6 text-(--fg-subtle) uppercase">Menu</DialogTitle>
         <nav className="flex flex-col gap-4">
           {links.map((link) => (
             <DialogClose asChild key={link.href}>
-              <Link href={link.href} className="text-lg font-medium text-(--fg)">
+              <Link
+                href={link.href}
+                className="text-lg font-medium text-(--fg) transition-colors duration-150 ease-out hover:text-(--accent)"
+              >
                 {link.title}
               </Link>
             </DialogClose>
