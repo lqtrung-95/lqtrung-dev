@@ -44,7 +44,7 @@ export default function AboutPage() {
       <p className="label-mono mt-8 text-(--accent) uppercase">~/about</p>
       <h1 className="mt-3 text-3xl font-bold text-(--fg)">About</h1>
 
-      <div className="mt-10 grid grid-cols-1 gap-12 lg:grid-cols-[1fr_320px]">
+      <div className="mt-10 grid grid-cols-1 items-start gap-12 lg:grid-cols-[1fr_320px]">
         <div className="prose dark:prose-invert lg:order-1">
           <MdxContent code={author.body} />
         </div>
