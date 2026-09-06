@@ -23,7 +23,7 @@ const stats: Stat[] = [
     icon: GraduationCap,
     label: 'Education',
     value: 'MS @ Georgia Tech',
-    detail: 'Specializing in Interactive Intelligence.',
+    detail: 'Specializing in Artificial Intelligence.',
     span: 'medium',
   },
   {
