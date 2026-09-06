@@ -13,10 +13,14 @@ const spanClasses: Record<BentoSpan, string> = {
 
 export function BentoCell({
   span = 'small',
+  interactive = false,
   className,
   children,
 }: {
   span?: BentoSpan
+  /** Adds a color/shadow hover treatment for cells that wrap a link — never a
+   * transform, so neighboring cells never reflow (see motion rules). */
+  interactive?: boolean
   className?: string
   children: ReactNode
 }) {
@@ -24,6 +28,8 @@ export function BentoCell({
     <div
       className={cn(
         'scroll-reveal rounded-(--radius-card) border border-(--border) bg-(--bg-elevated) p-6',
+        interactive &&
+          'transition-[border-color,box-shadow] duration-200 ease-out hover:border-(--accent)/50 hover:shadow-[0_16px_40px_-24px_var(--accent)]',
         spanClasses[span],
         className
       )}
