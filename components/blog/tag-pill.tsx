@@ -5,7 +5,7 @@ export function TagPill({ tag }: { tag: string }) {
   return (
     <Link
       href={`/tags/${tagToSlug(tag)}`}
-      className="rounded-full border border-(--border) px-2.5 py-0.5 text-xs font-medium text-(--fg-muted) transition-colors hover:border-(--accent) hover:text-(--accent)"
+      className="label-mono-sm rounded border border-(--border) px-2 py-0.5 text-(--fg-muted) uppercase transition-colors duration-150 ease-out hover:border-(--accent) hover:text-(--accent)"
     >
       {tag}
     </Link>

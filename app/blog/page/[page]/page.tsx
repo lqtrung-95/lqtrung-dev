@@ -29,9 +29,8 @@ export default async function BlogPagePage({
 
   return (
     <Container>
-      <h1 className="mt-8 font-(family-name:--font-sans-display) text-3xl font-bold text-(--fg)">
-        Blog
-      </h1>
+      <p className="label-mono mt-8 text-(--accent) uppercase">~/blog</p>
+      <h1 className="mt-3 text-3xl font-bold text-(--fg)">Blog</h1>
       <PostList posts={posts} />
       <Pagination currentPage={currentPage} totalPages={totalPages} />
     </Container>

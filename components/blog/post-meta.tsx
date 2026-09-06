@@ -5,11 +5,11 @@ export function PostMeta({ date, readingTime }: { date: string; readingTime?: st
     day: 'numeric',
   })
   return (
-    <div className="flex items-center gap-2 text-sm text-(--fg-subtle)">
+    <div className="label-mono-sm flex items-center gap-2 text-(--fg-subtle) uppercase">
       <time dateTime={date}>{formatted}</time>
       {readingTime && (
         <>
-          <span aria-hidden>&middot;</span>
+          <span aria-hidden>{'//'}</span>
           <span>{readingTime}</span>
         </>
       )}

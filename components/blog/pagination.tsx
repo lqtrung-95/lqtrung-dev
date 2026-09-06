@@ -19,20 +19,20 @@ export function Pagination({
         href={prevHref}
         aria-disabled={currentPage <= 1}
         className={cn(
-          'text-sm font-medium text-(--fg-muted) hover:text-(--fg)',
+          'label-mono text-(--fg-muted) uppercase transition-colors duration-150 ease-out hover:text-(--accent)',
           currentPage <= 1 && 'pointer-events-none opacity-40'
         )}
       >
         &larr; Previous
       </Link>
-      <span className="text-sm text-(--fg-subtle)">
-        Page {currentPage} of {totalPages}
+      <span className="label-mono-sm text-(--fg-subtle) uppercase">
+        Page {currentPage} / {totalPages}
       </span>
       <Link
         href={nextHref}
         aria-disabled={currentPage >= totalPages}
         className={cn(
-          'text-sm font-medium text-(--fg-muted) hover:text-(--fg)',
+          'label-mono text-(--fg-muted) uppercase transition-colors duration-150 ease-out hover:text-(--accent)',
           currentPage >= totalPages && 'pointer-events-none opacity-40'
         )}
       >

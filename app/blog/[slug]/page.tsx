@@ -38,9 +38,8 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
       <div className="grid grid-cols-1 gap-10 py-8 xl:grid-cols-[1fr_16rem]">
         <article className="min-w-0">
           <header>
-            <h1 className="font-(family-name:--font-sans-display) text-3xl font-bold text-(--fg) sm:text-4xl">
-              {post.title}
-            </h1>
+            <p className="label-mono text-(--accent) uppercase">~/blog/{slug}</p>
+            <h1 className="mt-3 text-3xl font-bold text-(--fg) sm:text-4xl">{post.title}</h1>
             <div className="mt-4">
               <PostMeta date={post.date} readingTime={post.readingTime} />
             </div>
@@ -58,9 +57,12 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
           </div>
 
           {(prev || next) && (
-            <nav className="mt-16 flex justify-between border-t border-(--border) pt-6 text-sm">
+            <nav className="mt-16 flex justify-between gap-4 border-t border-(--border) pt-6 text-sm">
               {prev ? (
-                <Link href={`/blog/${prev.slug}`} className="text-(--fg-muted) hover:text-(--fg)">
+                <Link
+                  href={`/blog/${prev.slug}`}
+                  className="text-(--fg-muted) transition-colors duration-150 ease-out hover:text-(--accent)"
+                >
                   &larr; {prev.title}
                 </Link>
               ) : (
@@ -69,7 +71,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
               {next && (
                 <Link
                   href={`/blog/${next.slug}`}
-                  className="text-right text-(--fg-muted) hover:text-(--fg)"
+                  className="text-right text-(--fg-muted) transition-colors duration-150 ease-out hover:text-(--accent)"
                 >
                   {next.title} &rarr;
                 </Link>

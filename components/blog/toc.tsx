@@ -44,9 +44,7 @@ export function Toc({ items }: { items: TocNode[] }) {
 
   return (
     <nav aria-label="Table of contents" className="hidden xl:block">
-      <p className="mb-3 text-xs font-semibold tracking-wide text-(--fg-subtle) uppercase">
-        On this page
-      </p>
+      <p className="label-mono-sm mb-3 text-(--fg-subtle) uppercase">On this page</p>
       <ul className="space-y-2 border-l border-(--border) text-sm">
         {flatItems.map((item) => {
           const id = item.url.replace('#', '')
