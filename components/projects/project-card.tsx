@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { ArrowUpRight } from 'lucide-react'
 import type { Project } from '@/data/projects'
+import { cn } from '@/lib/utils'
 import { BentoCell } from '@/components/layout/bento-cell'
 import { StatusBadge } from '@/components/projects/status-badge'
 
@@ -72,6 +73,30 @@ export function ProjectCard({
       </div>
     </>
   )
+
+  // The detailed view (full /projects page) carries highlights + a long
+  // description, so card heights vary a lot per project — the compact
+  // bento grid's dense packing + shared row tracks were built for short,
+  // roughly-uniform tiles and visually overlapped adjacent cards here.
+  // Detailed cards render as a plain self-sizing block instead.
+  if (detailed) {
+    const detailedClassName = cn(
+      'surface-card group block h-full p-6',
+      !project.href && 'block'
+    )
+    return project.href ? (
+      <a
+        href={project.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={detailedClassName}
+      >
+        {content}
+      </a>
+    ) : (
+      <div className={detailedClassName}>{content}</div>
+    )
+  }
 
   if (project.href) {
     return (

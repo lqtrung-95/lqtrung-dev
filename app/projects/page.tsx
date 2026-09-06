@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import { Container } from '@/components/layout/container'
-import { BentoGrid } from '@/components/layout/bento-grid'
 import { ProjectCard } from '@/components/projects/project-card'
 import { projects } from '@/data/projects'
 
@@ -25,12 +24,10 @@ export default function ProjectsPage() {
         <h2 className="label-mono text-(--fg-subtle) uppercase">
           Enterprise scale <span aria-hidden>{'// '}{enterprise.length}</span>
         </h2>
-        <div className="mt-4">
-          <BentoGrid>
-            {enterprise.map((project) => (
-              <ProjectCard key={project.title} project={project} detailed />
-            ))}
-          </BentoGrid>
+        <div className="mt-4 grid grid-cols-1 items-start gap-6 lg:grid-cols-2">
+          {enterprise.map((project) => (
+            <ProjectCard key={project.title} project={project} detailed />
+          ))}
         </div>
       </section>
 
@@ -38,12 +35,10 @@ export default function ProjectsPage() {
         <h2 className="label-mono text-(--fg-subtle) uppercase">
           Independent products <span aria-hidden>{'// '}{personal.length}</span>
         </h2>
-        <div className="mt-4">
-          <BentoGrid>
-            {personal.map((project) => (
-              <ProjectCard key={project.title} project={project} detailed />
-            ))}
-          </BentoGrid>
+        <div className="mt-4 grid grid-cols-1 items-start gap-6 lg:grid-cols-2">
+          {personal.map((project) => (
+            <ProjectCard key={project.title} project={project} detailed />
+          ))}
         </div>
       </section>
     </Container>
