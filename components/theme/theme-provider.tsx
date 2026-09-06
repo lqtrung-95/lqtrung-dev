@@ -22,6 +22,11 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   const [theme, setThemeState] = useState<Theme | undefined>(undefined)
 
   useEffect(() => {
+    // Reads DOM state the pre-hydration script already applied (see
+    // theme-script.tsx) — there is no React state to derive this from
+    // until after mount, so a one-time setState here is the correct
+    // exception to the "no setState in effect" rule, not a workaround.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setThemeState(document.documentElement.classList.contains('light') ? 'light' : 'dark')
   }, [])
 

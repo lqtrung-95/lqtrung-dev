@@ -3,8 +3,17 @@ import { headerNavLinks, siteConfig } from '@/lib/site-config'
 import { ThemeToggle } from '@/components/theme/theme-toggle'
 import { MobileNav } from '@/components/layout/mobile-nav'
 import { Container } from '@/components/layout/container'
+import { SearchDialog } from '@/components/search/search-dialog'
+import { getAllPosts } from '@/lib/content'
 
 export function Header() {
+  const posts = getAllPosts().map((post) => ({
+    slug: post.slug,
+    title: post.title,
+    summary: post.summary,
+    tags: post.tags,
+  }))
+
   return (
     <header className="sticky top-0 z-40 border-b border-(--border) bg-(--nav-bg) backdrop-blur-md">
       <Container className="flex h-16 items-center justify-between">
@@ -23,7 +32,8 @@ export function Header() {
             </Link>
           ))}
         </nav>
-        <div className="flex items-center gap-1">
+        <div className="flex items-center gap-2">
+          <SearchDialog posts={posts} />
           <ThemeToggle />
           <MobileNav links={headerNavLinks} />
         </div>
