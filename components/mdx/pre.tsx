@@ -16,11 +16,17 @@ function extractText(node: ReactNode): string {
   return ''
 }
 
-export function Pre(props: ComponentPropsWithoutRef<'pre'>) {
+// rehype-pretty-code annotates the rendered <pre> with the fenced code's
+// language (e.g. ```ts -> data-language="ts"); surfaced in the pane header
+// as a real, source-derived label rather than an invented one.
+type PreProps = ComponentPropsWithoutRef<'pre'> & { 'data-language'?: string }
+
+export function Pre({ children, ...rest }: PreProps) {
   const [copied, setCopied] = useState(false)
+  const language = rest['data-language']
 
   async function handleCopy() {
-    const text = extractText(props.children)
+    const text = extractText(children)
     try {
       await navigator.clipboard.writeText(text)
       setCopied(true)
@@ -31,16 +37,21 @@ export function Pre(props: ComponentPropsWithoutRef<'pre'>) {
   }
 
   return (
-    <div className="group relative">
-      <button
-        type="button"
-        onClick={handleCopy}
-        aria-label={copied ? 'Copied' : 'Copy code'}
-        className="absolute top-2 right-2 z-10 rounded-md border border-(--border) bg-(--bg-elevated) p-1.5 text-(--fg-muted) opacity-0 transition-opacity group-hover:opacity-100 hover:text-(--fg) focus-visible:opacity-100"
-      >
-        {copied ? <Check className="size-3.5" /> : <Copy className="size-3.5" />}
-      </button>
-      <pre {...props} />
+    <div className="overflow-hidden rounded-lg border border-(--border)">
+      <div className="label-mono-sm flex items-center justify-between border-b border-(--border) bg-(--bg-subtle) px-3 py-2 text-(--fg-subtle)">
+        <span className="lowercase">~/trung-le{language ? `/snippet.${language}` : '/snippet'}</span>
+        <button
+          type="button"
+          onClick={handleCopy}
+          aria-label={copied ? 'Copied' : 'Copy code'}
+          className="cursor-pointer rounded p-1 text-(--fg-muted) transition-colors duration-150 ease-out hover:text-(--accent) focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--focus-ring)"
+        >
+          {copied ? <Check className="size-3.5" /> : <Copy className="size-3.5" />}
+        </button>
+      </div>
+      <pre {...rest} className="!m-0 !rounded-none !border-0">
+        {children}
+      </pre>
     </div>
   )
 }
