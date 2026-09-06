@@ -3,6 +3,7 @@ import 'katex/dist/katex.min.css'
 import './globals.css'
 import { geist, jetbrainsMono } from '@/app/fonts'
 import { ThemeProvider } from '@/components/theme/theme-provider'
+import { ThemeScript } from '@/components/theme/theme-script'
 import { Header } from '@/components/layout/header'
 import { Footer } from '@/components/layout/footer'
 import { siteConfig } from '@/lib/site-config'
@@ -24,7 +25,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       suppressHydrationWarning
     >
       <body>
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
+        <ThemeScript />
+        <ThemeProvider>
           <div className="flex min-h-dvh flex-col">
             <Header />
             <main className="flex-1">{children}</main>

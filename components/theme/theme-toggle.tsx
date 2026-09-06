@@ -1,19 +1,19 @@
 'use client'
 
-import { useTheme } from 'next-themes'
+import { useTheme } from '@/components/theme/theme-provider'
 import { Moon, Sun } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
 export function ThemeToggle() {
-  const { resolvedTheme, setTheme } = useTheme()
-  // next-themes returns `undefined` for resolvedTheme until after mount (no
-  // theme cookie/localStorage read yet on the server) — used directly as the
-  // hydration guard instead of a separate mounted-state + effect.
-  if (resolvedTheme === undefined) {
+  const { theme, setTheme } = useTheme()
+  // `theme` stays undefined until ThemeProvider's mount effect reads the
+  // class the pre-hydration script already applied — render an inert
+  // placeholder until then so this never mismatches the server render.
+  if (theme === undefined) {
     return <Button variant="ghost" size="icon" aria-hidden className="invisible" />
   }
 
-  const isDark = resolvedTheme === 'dark'
+  const isDark = theme === 'dark'
 
   return (
     <Button
